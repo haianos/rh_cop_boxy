@@ -1,0 +1,26 @@
+# Minimal configuration for Boxy
+# Only the RIGHT ARM is used
+
+simulation: false
+verbose: true
+freq_tf_update: 0.5
+
+robot_adaptor: "boxy-adaptors::BoxyAdaptorArmOnly"
+
+roi_frames:
+  rightarm:
+    Ta: "right_arm_flange_link"
+    Tb: "triangle_right_arm_link"
+
+joint_weights:
+  triangle_base_joint: 20.0
+  head_pan_joint:      0.1
+  head_tilt_joint:     0.1
+
+solver_config:
+  max_iterations:     300
+  max_cpu_time:        0.0
+  sample_time:         0.004
+  convergence_crit:    0.0001 #note: exponential notation only from YAML1.2
+  regularization:      0.0001
+  initialization_time: 3

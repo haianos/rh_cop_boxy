@@ -1,0 +1,30 @@
+# Minimal configuration for Boxy
+# Only the RIGHT ARM is used
+
+simulation: false
+
+robot_adaptor: "boxy-adaptors::BoxyAdaptorArmOnlyWithGripper"
+
+roi_frames:
+  rightarm:
+    Ta: "right_gripper_gripper_right_link"
+    Tb: "triangle_right_arm_link"
+  rlgripper:
+    Ta: "right_gripper_gripper_left_link"
+    Tb: "right_gripper_base_link"
+  rrgripper:
+    Ta: "right_gripper_gripper_right_link"
+    Tb: "right_gripper_base_link"
+
+joint_weights:
+  triangle_base_joint: 20.0
+  head_pan_joint:      0.1
+  head_tilt_joint:     0.1
+
+solver_config:
+  max_iterations:     300
+  max_cpu_time:        0.0
+  sample_time:         0.004
+  convergence_crit:    0.0001 #note: exponential notation only from YAML1.2
+  regularization:      0.0001
+  initialization_time: 3

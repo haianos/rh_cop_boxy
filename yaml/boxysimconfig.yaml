@@ -1,0 +1,52 @@
+simulation: true
+
+roi_frames:
+  world:
+    Ta: "base_footprint"
+    Tb: "base_footprint"
+  base:
+    Ta: "base_link"
+    Tb: "base_footprint"
+  leftarm:
+    Ta: "left_gripper_base_link"
+    Tb: "base_footprint"
+  rightarm:
+    Ta: "right_gripper_base_link"
+    Tb: "base_footprint"
+  camera:
+    Ta: "pw070_frame_out"
+    Tb: "base_footprint"
+
+joint_weights:
+  triangle_base_joint: 20.0
+  head_pan_joint:      0.1
+  head_tilt_joint:     0.1
+
+solver_config:
+  max_iterations:     300
+  max_cpu_time:        0.0
+  sample_time:         0.004
+  convergence_crit:    0.0001 #note: exponential notation only from YAML1.2
+  regularization:      0.0001
+  initialization_time: 3
+  
+init_joint_state:
+  left_arm_0_joint:    0.0
+  left_arm_1_joint:    0.5
+  left_arm_2_joint:     0.0
+  left_arm_3_joint:    -1.0
+  left_arm_4_joint:     0.0
+  left_arm_5_joint:     0.0
+  left_arm_6_joint:     0.0
+  
+  right_arm_0_joint:    0.0
+  right_arm_1_joint:   -0.5
+  right_arm_2_joint:    0.0
+  right_arm_3_joint:    1.0
+  right_arm_4_joint:    0.0
+  right_arm_5_joint:    0.0
+  right_arm_6_joint:    0.0
+  
+  triangle_base_joint: -0.5
+  head_pan_joint:       0.0
+  head_tilt_joint:      0.0

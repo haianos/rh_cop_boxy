@@ -1,0 +1,16 @@
+<package>
+  <description brief="rh_cop_boxy">
+
+     Collection of deployment and configuration files for Boxy Robot, UniBremen,
+     for rh_cop software package.
+     RoboHow.cog project
+
+  </description>
+  <author>Enea Scioni, Gianni Borghesan, Georg Bartels</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/rh_cop_boxy</url>
+  <depend package="rh_cop" />
+</package>
+
+

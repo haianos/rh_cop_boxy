@@ -1,0 +1,19 @@
+<launch>
+ <node name="client" type="node_delay.sh" args="3 rh_cop_boxy testboxy_fsm.py" pkg="rh_cop" output="screen" />
+ 
+ <!-- local URDF, only for dev purposes. Later remove and use the one below -->
+ 
+ <rosparam command="load" file="$(find rh_cop_boxy)/yaml/boxysimconfig.yaml" ns="server_config" />
+ <rosparam ns="server_config" subst_value="true" command="load" param="urdf_file">$(find rh_cop_boxy)/robots/boxy_description.urdf</rosparam>
+ <!-- <rosparam ns="server_config" subst_value="true" command="load" param="urdf_file">$(find iai_boxy_description)/robots/boxy_description.urdf</rosparam> -->
+ <node name="server" type="COPServer" pkg="rh_cop" output="screen"/>
+ 
+ <!-- load up urdf to the parameter server -->
+ <include file="$(find iai_boxy_description)/launch/upload_boxy.launch"/>
+ <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
+ <node name="rviz" pkg="rviz" type="rviz" />
+ 
+ <!-- Additional Extra frames -->
+ <node name="table" pkg="tf" type="static_transform_publisher" args="1.1 0 0.75 0 0 0 base_footprint table 10" />
+ 
+</launch>
