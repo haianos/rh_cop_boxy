@@ -28,3 +28,26 @@ solver_config:
   convergence_crit:    0.0001 #note: exponential notation only from YAML1.2
   regularization:      0.0001
   initialization_time: 3
+  
+adaptor_config:
+  right_arm_0_joint:
+    stiffness:          200.0
+    damping:            0.7
+  right_arm_1_joint:  
+    stiffness:          160.0
+    damping:            0.7  
+  right_arm_2_joint:
+    stiffness:          80.0
+    damping:            0.7 
+  right_arm_3_joint:
+    stiffness:          80.0
+    damping:            0.7 
+  right_arm_4_joint:
+    stiffness:          80.0
+    damping:            0.7 
+  right_arm_5_joint:    
+    stiffness:          80.0
+    damping:            0.7 
+  right_arm_6_joint:    
+    stiffness:          80.0
+    damping:            0.7  
