@@ -10,7 +10,7 @@
   <license>BSD</license>
   <review status="unreviewed" notes=""/>
   <url>http://ros.org/wiki/rh_cop_boxy</url>
-  <depend package="rh_cop" />
+  <!-- depend package="rh_cop" --> <!-- for CAKTIN, only run dependency -->
 </package>
 
 
