@@ -1,0 +1,13 @@
+<launch>
+ <node name="client" type="node_delay.sh" args="3 rh_cop_boxy boxy_tomato_spreading.py" pkg="rh_cop" output="screen" />
+ 
+ <!-- local URDF, only for dev purposes. Later remove and use the one below -->
+ <rosparam command="load" file="$(find rh_cop_boxy)/yaml/boxyconfig_tomato.yaml" ns="server_config" />
+ <rosparam ns="server_config" subst_value="true" command="load" param="urdf_file">$(find rh_cop_boxy)/robots/boxy_description.urdf</rosparam>
+ <node name="server" type="COPServer" pkg="rh_cop" output="screen"/>
+ 
+ <!-- Additional Extra frames -->
+ <node name="table" pkg="tf" type="static_transform_publisher" args="0.5 -0.2 0.0 -0.500 0.004 0.002 0.866 triangle_right_arm_link table 10" />
+ <node name="spoon" pkg="tf" type="static_transform_publisher" args="0.0 0.0 0.23 0 0 0 right_arm_flange_link spoon 10" />
+ 
+</launch>
